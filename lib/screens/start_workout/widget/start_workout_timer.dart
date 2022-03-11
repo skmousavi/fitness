@@ -23,9 +23,9 @@ class _StartWorkoutTimerState extends State<StartWorkoutTimer> {
 
   Widget _createCountdownTimer() {
     return CustomTimer(
-      from: Duration(seconds: widget.time),
-      to: Duration(seconds: 0),
-      onBuildAction: CustomTimerAction.auto_start,
+      begin: Duration(seconds: widget.time),
+      end: Duration(seconds: 0),
+      onChangeState: CustomTimerAction.auto_start,
       builder: (CustomTimerRemainingTime remaining) {
         return Text(
           "${remaining.minutes}:${remaining.seconds}",
@@ -45,4 +45,8 @@ class _StartWorkoutTimerState extends State<StartWorkoutTimer> {
       ),
     );
   }
+}
+
+mixin CustomTimerAction {
+  static var auto_start;
 }

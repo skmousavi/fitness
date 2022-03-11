@@ -38,7 +38,7 @@ class ReminderBloc extends Bloc<ReminderEvent, ReminderState> {
     final androidPlatformChannelSpecifics = AndroidNotificationDetails(
         'your other channel id',
         'your other channel name',
-        'your other channel description');
+        );
     final iOSPlatformChannelSpecifics = IOSNotificationDetails();
     NotificationDetails platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics,
